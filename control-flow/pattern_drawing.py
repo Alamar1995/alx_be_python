@@ -1,21 +1,18 @@
-# daily_reminder.py
 
-task = input("Enter your task: ")
-priority = input("Priority (high/medium/low): ").lower()
-time_bound = input("Is it time-bound? (yes/no): ").lower()
+# pattern_drawing.py
 
-match priority:
-    case "high":
-        reminder = f"'{task}' is a high priority task"
-    case "medium":
-        reminder = f"'{task}' is a medium priority task"
-    case "low":
-        reminder = f"'{task}' is a low priority task"
-    case _:
-        reminder = f"'{task}' has an undefined priority"
+# Prompt the user for the size of the pattern
+size = int(input("Enter the size of the pattern: "))
 
-if time_bound == "yes":
-    print(f"Reminder: {reminder} that requires immediate attention today!")
-else:
-    print(f"Reminder: {reminder}. Consider completing it when you have free time.")
+# Initialize row counter
+row = 0
+
+# Use a while loop for rows
+while row < size:
+    # Use a for loop for columns
+    for col in range(size):
+        print("*", end="")  # print stars in the same line
+    print()  # move to next line after each row
+    row += 1
+
 
