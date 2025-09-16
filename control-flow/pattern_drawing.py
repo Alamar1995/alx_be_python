@@ -1,10 +1,21 @@
-# Prompt User for Pattern Size
-size = int(input("Enter the size of the pattern: "))
+# daily_reminder.py
 
-# Draw the Pattern
-row = 0
-while row < size:
-    for col in range(size):
-        print("*", end="")
-    print()  # move to the next line after each row
-    row += 1
+task = input("Enter your task: ")
+priority = input("Priority (high/medium/low): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
+
+match priority:
+    case "high":
+        reminder = f"'{task}' is a high priority task"
+    case "medium":
+        reminder = f"'{task}' is a medium priority task"
+    case "low":
+        reminder = f"'{task}' is a low priority task"
+    case _:
+        reminder = f"'{task}' has an undefined priority"
+
+if time_bound == "yes":
+    print(f"Reminder: {reminder} that requires immediate attention today!")
+else:
+    print(f"Reminder: {reminder}. Consider completing it when you have free time.")
+
